@@ -8,3 +8,8 @@ entity.card_entity_type.add_form:
   title: 'Add Card entity type'
   appears_on:
     - entity.card_entity_type.collection
+entity.ecard_item_entity.add_form:
+  route_name: entity.ecard_item_entity.add_form
+  title: 'Add Ecard Item Entity'
+  appears_on:
+    - entity.ecard_item_entity.collection
