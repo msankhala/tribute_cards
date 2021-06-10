@@ -1,0 +1,22 @@
+add card entity entities:
+  title: 'Create new Card entity entities'
+
+administer card entity entities:
+  title: 'Administer Card entity entities'
+  description: 'Allow to access the administration form to configure Card entity entities.'
+  restrict access: true
+
+delete card entity entities:
+  title: 'Delete Card entity entities'
+
+edit card entity entities:
+  title: 'Edit Card entity entities'
+
+view published card entity entities:
+  title: 'View published Card entity entities'
+
+view unpublished card entity entities:
+  title: 'View unpublished Card entity entities'
+
+# permission_callbacks:
+#   - \Drupal\tribute_cards\CardEntityPermissions::generatePermissions

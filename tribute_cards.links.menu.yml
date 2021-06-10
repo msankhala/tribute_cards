@@ -1,0 +1,17 @@
+
+# Card entity menu items definition
+entity.card_entity.collection:
+  title: 'Card entity list'
+  route_name: entity.card_entity.collection
+  description: 'List Card entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Card entity type menu items definition
+entity.card_entity_type.collection:
+  title: 'Card entity type'
+  route_name: entity.card_entity_type.collection
+  description: 'List Card entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99

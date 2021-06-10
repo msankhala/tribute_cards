@@ -1,0 +1,6 @@
+name: 'Tribute Cards'
+type: module
+description: 'Allows you to create and manage ecards and paper cards and send them to users.'
+core: 8.x
+core_version_requirement: ^8.8 || ^9
+package: 'Custom'

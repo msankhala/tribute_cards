@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @file
+ * Contains tribute_cards.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tribute_cards_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tribute_cards module.
+    case 'help.page.tribute_cards':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Allows you to create and manage ecards and paper cards and send them to users.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tribute_cards_theme() {
+  return [
+    'tribute_cards' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tribute_cards_theme() {
+  $theme = [];
+  $theme['card_entity'] = [
+    'render element' => 'elements',
+    'file' => 'card_entity.page.inc',
+    'template' => 'card_entity',
+  ];
+  $theme['card_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'card_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function tribute_cards_theme_suggestions_card_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#card_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'card_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'card_entity__' . $entity->bundle();
+  $suggestions[] = 'card_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'card_entity__' . $entity->id();
+  $suggestions[] = 'card_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
