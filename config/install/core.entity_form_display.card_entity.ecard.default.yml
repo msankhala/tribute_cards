@@ -1,0 +1,61 @@
+uuid: 3701dbf6-8828-43c9-ba86-3b37710ad1e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.card_entity.ecard.field_ecard_message
+    - field.field.card_entity.ecard.field_ecard_subject
+    - field.field.card_entity.ecard.field_recipient_email_addresses
+    - tribute_cards.card_entity_type.ecard
+id: card_entity.ecard.default
+targetEntityType: card_entity
+bundle: ecard
+mode: default
+content:
+  field_ecard_message:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ecard_subject:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recipient_email_addresses:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  honoree_first_name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  honoree_last_name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  tribute_type:
+    type: options_select
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

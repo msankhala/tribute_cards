@@ -1,0 +1,19 @@
+uuid: 69e35979-3946-4957-a4ef-a3911923f787
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.card_entity.field_ecard_message
+    - tribute_cards.card_entity_type.ecard
+id: card_entity.ecard.field_ecard_message
+field_name: field_ecard_message
+entity_type: card_entity
+bundle: ecard
+label: 'eCard Message'
+description: 'Please enter the appropriate eCard message that you want to print on eCard.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

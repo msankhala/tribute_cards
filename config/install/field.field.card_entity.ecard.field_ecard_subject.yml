@@ -1,0 +1,19 @@
+uuid: f9111113-2093-4da1-a220-213a00a17da5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.card_entity.field_ecard_subject
+    - tribute_cards.card_entity_type.ecard
+id: card_entity.ecard.field_ecard_subject
+field_name: field_ecard_subject
+entity_type: card_entity
+bundle: ecard
+label: 'eCard Subject'
+description: 'Please enter the appropriate subject for you eCard'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

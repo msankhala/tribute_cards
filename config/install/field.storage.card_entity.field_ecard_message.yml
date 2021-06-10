@@ -1,0 +1,19 @@
+uuid: a2dac158-b338-4946-8691-e5379a04c7f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - tribute_cards
+id: card_entity.field_ecard_message
+field_name: field_ecard_message
+entity_type: card_entity
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

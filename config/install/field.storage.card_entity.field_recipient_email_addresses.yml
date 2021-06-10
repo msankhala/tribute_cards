@@ -1,0 +1,18 @@
+uuid: fd04e61f-618e-448c-8cd5-5e155ab54119
+langcode: en
+status: true
+dependencies:
+  module:
+    - tribute_cards
+id: card_entity.field_recipient_email_addresses
+field_name: field_recipient_email_addresses
+entity_type: card_entity
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

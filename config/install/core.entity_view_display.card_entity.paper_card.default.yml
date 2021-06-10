@@ -1,0 +1,55 @@
+uuid: 8f9cfdcb-dd48-4e6e-99c3-5197e271af92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.card_entity.paper_card.field_paper_card_message
+    - field.field.card_entity.paper_card.field_recipient_address
+    - tribute_cards.card_entity_type.paper_card
+  module:
+    - address
+    - text
+id: card_entity.paper_card.default
+targetEntityType: card_entity
+bundle: paper_card
+mode: default
+content:
+  field_paper_card_message:
+    weight: -1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_recipient_address:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  honoree_first_name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  honoree_last_name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  tribute_type:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

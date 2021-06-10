@@ -1,0 +1,41 @@
+uuid: d7eb37cc-7d1d-4266-ba25-7aa242179246
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.card_entity.field_recipient_address
+    - tribute_cards.card_entity_type.paper_card
+  module:
+    - address
+id: card_entity.paper_card.field_recipient_address
+field_name: field_recipient_address
+entity_type: card_entity
+bundle: paper_card
+label: 'Notification Recipient Address'
+description: 'Please enter the recipient''s address.'
+required: true
+translatable: false
+default_value:
+  -
+    langcode: ''
+    country_code: US
+    administrative_area: ''
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: null
+    address_line2: ''
+    organization: null
+    given_name: ''
+    additional_name: null
+    family_name: ''
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    organization:
+      override: hidden
+  fields: {  }
+field_type: address
