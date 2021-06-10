@@ -4,37 +4,76 @@ namespace Drupal\tribute_cards\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
-use Drupal\Core\Entity\EntityPublishedInterface;
+
+// Use Drupal\Core\Entity\EntityPublishedInterface;.
 
 /**
  * Provides an interface for defining Card entity entities.
  *
  * @ingroup tribute_cards
  */
-interface CardEntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityPublishedInterface {
+interface CardEntityInterface extends ContentEntityInterface, EntityChangedInterface {
 
   /**
    * Add get/set methods for your configuration properties here.
    */
 
   /**
-   * Gets the Card entity name.
+   * Gets the Card entity tribute type.
    *
    * @return string
-   *   Name of the Card entity.
+   *   Tribute type of the Card entity.
    */
-  public function getName();
+  public function getTributeType();
 
   /**
-   * Sets the Card entity name.
+   * Sets the Card entity tribute type.
    *
-   * @param string $name
-   *   The Card entity name.
+   * @param string $tributeType
+   *   The Card tribute type.
    *
    * @return \Drupal\tribute_cards\Entity\CardEntityInterface
    *   The called Card entity entity.
    */
-  public function setName($name);
+  public function setTributeType($tributeType);
+
+  /**
+   * Gets the Card entity honoree first name.
+   *
+   * @return string
+   *   honoree first name of the Card entity.
+   */
+  public function getHonoreeFirstName();
+
+  /**
+   * Sets the Card entity honoree first name.
+   *
+   * @param string $lastName
+   *   The Card honoree last name.
+   *
+   * @return \Drupal\tribute_cards\Entity\CardEntityInterface
+   *   The called Card entity entity.
+   */
+  public function setHonoreeFirstName($lastName);
+
+  /**
+   * Gets the Card entity honoree last name.
+   *
+   * @return string
+   *   honoree last name of the Card entity.
+   */
+  public function getHonoreeLastName();
+
+  /**
+   * Sets the Card entity honoree last name.
+   *
+   * @param string $lastName
+   *   The Card honoree last name.
+   *
+   * @return \Drupal\tribute_cards\Entity\CardEntityInterface
+   *   The called Card entity entity.
+   */
+  public function setHonoreeLastName($lastName);
 
   /**
    * Gets the Card entity creation timestamp.

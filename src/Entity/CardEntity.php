@@ -5,7 +5,6 @@ namespace Drupal\tribute_cards\Entity;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
-use Drupal\Core\Entity\EntityPublishedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
@@ -42,10 +41,9 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "bundle" = "type",
- *     "label" = "name",
+ *     "tribute_type" = "tribute_type",
  *     "uuid" = "uuid",
  *     "langcode" = "langcode",
- *     "published" = "status",
  *   },
  *   links = {
  *     "canonical" = "/admin/structure/card_entity/{card_entity}",
@@ -62,20 +60,49 @@ use Drupal\Core\Entity\EntityTypeInterface;
 class CardEntity extends ContentEntityBase implements CardEntityInterface {
 
   use EntityChangedTrait;
-  use EntityPublishedTrait;
 
   /**
    * {@inheritdoc}
    */
-  public function getName() {
-    return $this->get('name')->value;
+  public function getTributeType() {
+    return $this->get('tribute_type')->value;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function setName($name) {
-    $this->set('name', $name);
+  public function setTributeType($tributeType) {
+    $this->set('tribute_type', $tributeType);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getHonoreeFirstName() {
+    return $this->get('honoree_first_name')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setHonoreeFirstName($firstName) {
+    $this->set('honoree_first_name', $firstName);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getHonoreeLastName() {
+    return $this->get('honoree_last_name')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setHonoreeLastName($lastName) {
+    $this->set('honoree_last_name', $lastName);
     return $this;
   }
 
@@ -100,12 +127,33 @@ class CardEntity extends ContentEntityBase implements CardEntityInterface {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    // Add the published field.
-    $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields['tribute_type'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Tribute Type'))
+      ->setDescription(t('The tribute type of gift.'))
+      ->setSettings([
+        'allowed_values' => [
+          'in_memory_of' => 'In Memory of',
+          'in_honor_of' => 'In Honor of',
+        ],
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(FALSE);
 
-    $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Card entity entity.'))
+    $fields['honoree_first_name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Honoree First Name'))
+      ->setDescription(t('The first name of Honoree.'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -122,14 +170,34 @@ class CardEntity extends ContentEntityBase implements CardEntityInterface {
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
-    $fields['status']->setDescription(t('A boolean indicating whether the Card entity is published.'))
+    $fields['honoree_last_name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Honoree Last Name'))
+      ->setDescription(t('The last name of Honoree.'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -4,
+      ])
       ->setDisplayOptions('form', [
-        'type' => 'boolean_checkbox',
-        'weight' => -3,
-      ]);
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(FALSE);
 
+    // $fields['status']->setDescription(t('A boolean indicating whether the Card entity is published.'))
+    //   ->setDisplayOptions('form', [
+    //     'type' => 'boolean_checkbox',
+    //     'weight' => -3,
+    //   ]);
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
       ->setDescription(t('The time that the entity was created.'));

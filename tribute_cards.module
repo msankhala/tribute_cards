@@ -26,13 +26,13 @@ function tribute_cards_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function tribute_cards_theme() {
-  return [
-    'tribute_cards' => [
-      'render element' => 'children',
-    ],
-  ];
-}
+// function tribute_cards_theme() {
+//   return [
+//     'tribute_cards' => [
+//       'render element' => 'children',
+//     ],
+//   ];
+// }
 
 /**
  * Implements hook_theme().
