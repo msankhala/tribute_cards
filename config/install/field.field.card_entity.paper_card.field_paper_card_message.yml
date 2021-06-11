@@ -1,18 +1,18 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - text
-    - tribute_cards
-id: card_entity.field_paper_card_message
+  config:
+    - field.storage.card_entity.field_paper_card_message
+    - tribute_cards.card_entity_type.paper_card
+id: card_entity.ecard.field_paper_card_message
 field_name: field_paper_card_message
 entity_type: card_entity
-type: text_long
+bundle: paper_card
+label: 'Paper Card Message'
+description: 'Please enter the appropriate paper card message.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
 settings: {  }
-module: text
-locked: false
-cardinality: 1
-translatable: true
-indexes: {  }
-persist_with_no_fields: false
-custom_storage: false
+field_type: text_long

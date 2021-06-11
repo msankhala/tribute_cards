@@ -26,8 +26,8 @@ class EcardItemEntityListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var \Drupal\tribute_cards\Entity\EcardItemEntity $entity */
-    $row['id'] = $entity->id();
+    /** @var \Drupal\tribute_cards\Entity\EcardItemEntity $entity */
+    $row['id'] = $entity->toLink($entity->id());
     $row['name'] = Link::createFromRoute(
       $entity->label(),
       'entity.ecard_item_entity.edit_form',

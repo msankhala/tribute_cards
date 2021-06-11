@@ -44,10 +44,10 @@ use Drupal\Core\Entity\EntityPublishedTrait;
  *     "published" = "status",
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/ecard_item/{ecard_item}",
+ *     "canonical" = "/admin/structure/ecard_item/{ecard_item_entity}",
  *     "add-form" = "/admin/structure/ecard_item/add",
- *     "edit-form" = "/admin/structure/ecard_item/{ecard_item}/edit",
- *     "delete-form" = "/admin/structure/ecard_item/{ecard_item}/delete",
+ *     "edit-form" = "/admin/structure/ecard_item/{ecard_item_entity}/edit",
+ *     "delete-form" = "/admin/structure/ecard_item/{ecard_item_entity}/delete",
  *     "collection" = "/admin/structure/ecard_item",
  *   },
  *   field_ui_base_route = "ecard_item_entity.settings"
