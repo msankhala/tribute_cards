@@ -35,7 +35,7 @@ class EcardItemEntitySettingsForm extends FormBase {
   }
 
   /**
-   * Defines the settings form for Ecard Item Entity entities.
+   * Defines the settings form for Ecard Item entities.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -46,7 +46,7 @@ class EcardItemEntitySettingsForm extends FormBase {
    *   Form definition array.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['ecarditementity_settings']['#markup'] = 'Settings form for Ecard Item Entity entities. Manage field settings here.';
+    $form['ecarditementity_settings']['#markup'] = 'Settings form for Ecard Item entities. Manage field settings here.';
     return $form;
   }
 

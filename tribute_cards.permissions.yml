@@ -23,23 +23,43 @@ view card entity entities:
 
 # permission_callbacks:
 #   - \Drupal\tribute_cards\CardEntityPermissions::generatePermissions
-add ecard item entity entities:
-  title: 'Create new Ecard Item Entity entities'
+# add ecard item entity entities:
+#   title: 'Create new Ecard Item Entity entities'
 
-administer ecard item entity entities:
-  title: 'Administer Ecard Item Entity entities'
-  description: 'Allow to access the administration form to configure Ecard Item Entity entities.'
+# administer ecard item entity entities:
+#   title: 'Administer Ecard Item Entity entities'
+#   description: 'Allow to access the administration form to configure Ecard Item Entity entities.'
+#   restrict access: true
+
+# delete ecard item entity entities:
+#   title: 'Delete Ecard Item Entity entities'
+
+# edit ecard item entity entities:
+#   title: 'Edit Ecard Item Entity entities'
+
+# view published ecard item entity entities:
+#   title: 'View published Ecard Item Entity entities'
+
+# view unpublished ecard item entity entities:
+#   title: 'View unpublished Ecard Item Entity entities'
+
+add ecard item entities:
+  title: 'Create new Ecard Item entities'
+
+administer ecard item entities:
+  title: 'Administer Ecard Item entities'
+  description: 'Allow to access the administration form to configure Ecard Item entities.'
   restrict access: true
 
-delete ecard item entity entities:
-  title: 'Delete Ecard Item Entity entities'
+delete ecard item entities:
+  title: 'Delete Ecard Item entities'
 
-edit ecard item entity entities:
-  title: 'Edit Ecard Item Entity entities'
+edit ecard item entities:
+  title: 'Edit Ecard Item entities'
 
-view published ecard item entity entities:
-  title: 'View published Ecard Item Entity entities'
+view published ecard item entities:
+  title: 'View published Ecard Item entities'
 
-view unpublished ecard item entity entities:
-  title: 'View unpublished Ecard Item Entity entities'
+view unpublished ecard item entities:
+  title: 'View unpublished Ecard Item entities'
 

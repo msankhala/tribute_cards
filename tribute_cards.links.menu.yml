@@ -16,16 +16,34 @@ entity.card_entity_type.collection:
   parent: system.admin_structure
   weight: 99
 
-# Ecard Item Entity menu items definition
-entity.ecard_item_entity.collection:
+# # Ecard Item Entity menu items definition
+# entity.ecard_item_entity.collection:
+#   title: 'Ecard Item list'
+#   route_name: entity.ecard_item_entity.collection
+#   description: 'List Ecard Item Entity entities'
+#   parent: system.admin_structure
+#   weight: 100
+
+
+# ecard_item_entity.admin.structure.settings:
+#   title: 'Ecard Item Entity settings'
+#   description: 'Configure Ecard Item Entity entities'
+#   route_name: ecard_item_entity.settings
+#   parent: system.admin_structure
+
+# Ecard Item menu items definition
+entity.ecard_item.collection:
   title: 'Ecard Item list'
-  route_name: entity.ecard_item_entity.collection
-  description: 'List Ecard Item Entity entities'
+  route_name: entity.ecard_item.collection
+  description: 'List Ecard Item entities'
   parent: system.admin_structure
   weight: 100
 
-ecard_item_entity.admin.structure.settings:
-  title: 'Ecard Item Entity settings'
-  description: 'Configure Ecard Item Entity entities'
-  route_name: ecard_item_entity.settings
+
+# Ecard Item type menu items definition
+entity.ecard_item_type.collection:
+  title: 'Ecard Item type'
+  route_name: entity.ecard_item_type.collection
+  description: 'List Ecard Item type (bundles)'
   parent: system.admin_structure
+  weight: 99

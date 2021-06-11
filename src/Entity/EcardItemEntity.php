@@ -2,25 +2,29 @@
 
 namespace Drupal\tribute_cards\Entity;
 
+use Drupal\file\Entity\File;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityPublishedTrait;
+use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
- * Defines the Ecard Item Entity entity.
+ * Defines the Ecard Item entity.
  *
  * @ingroup tribute_cards
  *
  * @ContentEntityType(
- *   id = "ecard_item_entity",
+ *   id = "ecard_item",
  *   label = @Translation("Ecard Item"),
+ *   bundle_label = @Translation("Ecard Item type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\tribute_cards\EcardItemEntityListBuilder",
  *     "views_data" = "Drupal\tribute_cards\Entity\EcardItemEntityViewsData",
+ *     "translation" = "Drupal\tribute_cards\EcardItemEntityTranslationHandler",
  *
  *     "form" = {
  *       "default" = "Drupal\tribute_cards\Form\EcardItemEntityForm",
@@ -33,30 +37,44 @@ use Drupal\Core\Entity\EntityPublishedTrait;
  *     },
  *     "access" = "Drupal\tribute_cards\EcardItemEntityAccessControlHandler",
  *   },
- *   base_table = "ecard_item_entity",
- *   translatable = FALSE,
- *   admin_permission = "administer ecard item entity entities",
+ *   base_table = "ecard_item",
+ *   data_table = "ecard_item_field_data",
+ *   translatable = TRUE,
+ *   admin_permission = "administer ecard item entities",
  *   entity_keys = {
  *     "id" = "id",
+ *     "bundle" = "type",
  *     "label" = "name",
  *     "uuid" = "uuid",
  *     "langcode" = "langcode",
  *     "published" = "status",
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/ecard_item/{ecard_item_entity}",
- *     "add-form" = "/admin/structure/ecard_item/add",
- *     "edit-form" = "/admin/structure/ecard_item/{ecard_item_entity}/edit",
- *     "delete-form" = "/admin/structure/ecard_item/{ecard_item_entity}/delete",
+ *     "canonical" = "/admin/structure/ecard_item/{ecard_item}",
+ *     "add-page" = "/admin/structure/ecard_item/add",
+ *     "add-form" = "/admin/structure/ecard_item/add/{ecard_item_type}",
+ *     "edit-form" = "/admin/structure/ecard_item/{ecard_item}/edit",
+ *     "delete-form" = "/admin/structure/ecard_item/{ecard_item}/delete",
  *     "collection" = "/admin/structure/ecard_item",
  *   },
- *   field_ui_base_route = "ecard_item_entity.settings"
+ *   bundle_entity_type = "ecard_item_type",
+ *   field_ui_base_route = "entity.ecard_item_type.edit_form"
  * )
  */
 class EcardItemEntity extends ContentEntityBase implements EcardItemEntityInterface {
 
   use EntityChangedTrait;
   use EntityPublishedTrait;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
+    parent::preCreate($storage_controller, $values);
+    $values += [
+      'user_id' => \Drupal::currentUser()->id(),
+    ];
+  }
 
   /**
    * {@inheritdoc}
@@ -91,15 +109,66 @@ class EcardItemEntity extends ContentEntityBase implements EcardItemEntityInterf
   /**
    * {@inheritdoc}
    */
-  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
-    $fields = parent::baseFieldDefinitions($entity_type);
-    $file_public_path = Settings::get('file_public_path');
+  public function getImageTargetId() {
+    return $this->image__target_id;
+
+  }
+
+  /**
+   * Returns the rendered image or empty array.
+   */
+  public function getRenderedImage($imageStyle = 'thumbnail') {
+    $imageFile = File::load($this->getImageTargetId());
+
+    // Eearly return if image file not found.
+    if (!$imageFile) {
+      return [];
+    }
+
+    $imageUri = $imageFile->getFileUri();
+    $variables = [
+      'style_name' => $imageStyle,
+      'uri' => $imageUri,
+    ];
+
+    // The image.factory service will check if our image is valid.
+    $image = \Drupal::service('image.factory')->get($imageUri);
+    if ($image->isValid()) {
+      $variables['width'] = $image->getWidth();
+      $variables['height'] = $image->getHeight();
+    }
+    else {
+      $variables['width'] = $variables['height'] = NULL;
+    }
+
+    $image_render_array = [
+      '#theme' => 'image_style',
+      '#width' => $variables['width'],
+      '#height' => $variables['height'],
+      '#style_name' => $variables['style_name'],
+      '#uri' => $variables['uri'],
+    ];
+
+    // Add the file entity to the cache dependencies.
+    // This will clear our cache when this entity updates.
+    $renderer = \Drupal::service('renderer');
+    $renderer->addCacheableDependency($image_render_array, $imageFile);
+
+    return $image_render_array;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function baseFieldDefinitions(EntityTypeInterface $entityType) {
+    $fields = parent::baseFieldDefinitions($entityType);
+    $filePublicPath = Settings::get('file_public_path');
     // Add the published field.
-    $fields += static::publishedBaseFieldDefinitions($entity_type);
+    $fields += static::publishedBaseFieldDefinitions($entityType);
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Ecard Item Entity entity.'))
+      ->setDescription(t('The name of the Ecard Item entity.'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -122,7 +191,7 @@ class EcardItemEntity extends ContentEntityBase implements EcardItemEntityInterf
       ->setLabel(t('eCard Image'))
       ->setDescription(t('eCard Image field.'))
       ->setSettings([
-        'file_directory' => $file_public_path,
+        'file_directory' => $filePublicPath,
         'alt_field_required' => FALSE,
         'file_extensions' => 'png jpg jpeg',
         'max_filesize' => '20MB',
@@ -140,7 +209,7 @@ class EcardItemEntity extends ContentEntityBase implements EcardItemEntityInterf
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['status']->setDescription(t('A boolean indicating whether the Ecard Item Entity is published.'))
+    $fields['status']->setDescription(t('A boolean indicating whether the Ecard Item is published.'))
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
         'weight' => -3,

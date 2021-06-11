@@ -15,11 +15,11 @@ entity.card_entity.delete_form:
   base_route:  entity.card_entity.canonical
   title: Delete
   weight: 10
-# Ecard Item Entity routing definition
-ecard_item_entity.settings_tab:
-  route_name: ecard_item_entity.settings
-  title: 'Settings'
-  base_route: ecard_item_entity.settings
+# # Ecard Item Entity routing definition
+# ecard_item_entity.settings_tab:
+#   route_name: ecard_item_entity.settings
+#   title: 'Settings'
+#   base_route: ecard_item_entity.settings
 
 entity.ecard_item_entity.canonical:
   route_name: entity.ecard_item_entity.canonical
@@ -34,5 +34,22 @@ entity.ecard_item_entity.edit_form:
 entity.ecard_item_entity.delete_form:
   route_name:  entity.ecard_item_entity.delete_form
   base_route:  entity.ecard_item_entity.canonical
+  title: Delete
+  weight: 10
+# Ecard Item routing definition
+
+entity.ecard_item.canonical:
+  route_name: entity.ecard_item.canonical
+  base_route: entity.ecard_item.canonical
+  title: 'View'
+
+entity.ecard_item.edit_form:
+  route_name: entity.ecard_item.edit_form
+  base_route: entity.ecard_item.canonical
+  title: 'Edit'
+
+entity.ecard_item.delete_form:
+  route_name:  entity.ecard_item.delete_form
+  base_route:  entity.ecard_item.canonical
   title: Delete
   weight: 10

@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Form controller for Ecard Item Entity edit forms.
+ * Form controller for Ecard Item edit forms.
  *
  * @ingroup tribute_cards
  */
@@ -50,17 +50,17 @@ class EcardItemEntityForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        $this->messenger()->addMessage($this->t('Created the %label Ecard Item Entity.', [
+        $this->messenger()->addMessage($this->t('Created the %label Ecard Item.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        $this->messenger()->addMessage($this->t('Saved the %label Ecard Item Entity.', [
+        $this->messenger()->addMessage($this->t('Saved the %label Ecard Item.', [
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.ecard_item_entity.canonical', ['ecard_item_entity' => $entity->id()]);
+    $form_state->setRedirect('entity.ecard_item.canonical', ['ecard_item' => $entity->id()]);
   }
 
 }

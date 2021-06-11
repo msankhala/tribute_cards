@@ -5,7 +5,7 @@ namespace Drupal\tribute_cards\Entity;
 use Drupal\views\EntityViewsData;
 
 /**
- * Provides Views data for Ecard Item Entity entities.
+ * Provides Views data for Ecard Item entities.
  */
 class EcardItemEntityViewsData extends EntityViewsData {
 
