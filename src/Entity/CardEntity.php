@@ -18,9 +18,9 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *   bundle_label = @Translation("Card entity type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\tribute_cards\CardEntityListBuilder",
+ *     "list_builder" = "Drupal\tribute_cards\ListBuilder\CardEntityListBuilder",
  *     "views_data" = "Drupal\tribute_cards\Entity\CardEntityViewsData",
- *     "translation" = "Drupal\tribute_cards\CardEntityTranslationHandler",
+ *     "translation" = "Drupal\tribute_cards\Translation\CardEntityTranslationHandler",
  *
  *     "form" = {
  *       "default" = "Drupal\tribute_cards\Form\CardEntityForm",
@@ -29,9 +29,9 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *       "delete" = "Drupal\tribute_cards\Form\CardEntityDeleteForm",
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\tribute_cards\CardEntityHtmlRouteProvider",
+ *       "html" = "Drupal\tribute_cards\Routing\CardEntityHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\tribute_cards\CardEntityAccessControlHandler",
+ *     "access" = "Drupal\tribute_cards\AccessController\CardEntityAccessControlHandler",
  *   },
  *   base_table = "card_entity",
  *   data_table = "card_entity_field_data",

@@ -22,9 +22,9 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *   bundle_label = @Translation("Ecard Item type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\tribute_cards\EcardItemEntityListBuilder",
+ *     "list_builder" = "Drupal\tribute_cards\ListBuilder\EcardItemEntityListBuilder",
  *     "views_data" = "Drupal\tribute_cards\Entity\EcardItemEntityViewsData",
- *     "translation" = "Drupal\tribute_cards\EcardItemEntityTranslationHandler",
+ *     "translation" = "Drupal\tribute_cards\Translation\EcardItemEntityTranslationHandler",
  *
  *     "form" = {
  *       "default" = "Drupal\tribute_cards\Form\EcardItemEntityForm",
@@ -33,9 +33,9 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *       "delete" = "Drupal\tribute_cards\Form\EcardItemEntityDeleteForm",
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\tribute_cards\EcardItemEntityHtmlRouteProvider",
+ *       "html" = "Drupal\tribute_cards\Routing\EcardItemEntityHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\tribute_cards\EcardItemEntityAccessControlHandler",
+ *     "access" = "Drupal\tribute_cards\AccessController\EcardItemEntityAccessControlHandler",
  *   },
  *   base_table = "ecard_item",
  *   data_table = "ecard_item_field_data",

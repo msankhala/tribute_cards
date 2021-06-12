@@ -12,14 +12,14 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   label = @Translation("Card entity type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\tribute_cards\CardEntityTypeListBuilder",
+ *     "list_builder" = "Drupal\tribute_cards\ListBuilder\CardEntityTypeListBuilder",
  *     "form" = {
  *       "add" = "Drupal\tribute_cards\Form\CardEntityTypeForm",
  *       "edit" = "Drupal\tribute_cards\Form\CardEntityTypeForm",
  *       "delete" = "Drupal\tribute_cards\Form\CardEntityTypeDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\tribute_cards\CardEntityTypeHtmlRouteProvider",
+ *       "html" = "Drupal\tribute_cards\Routing\CardEntityTypeHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "card_entity_type",

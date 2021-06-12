@@ -12,14 +12,14 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   label = @Translation("Ecard Item type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\tribute_cards\EcardItemEntityTypeListBuilder",
+ *     "list_builder" = "Drupal\tribute_cards\ListBuilder\EcardItemEntityTypeListBuilder",
  *     "form" = {
  *       "add" = "Drupal\tribute_cards\Form\EcardItemEntityTypeForm",
  *       "edit" = "Drupal\tribute_cards\Form\EcardItemEntityTypeForm",
  *       "delete" = "Drupal\tribute_cards\Form\EcardItemEntityTypeDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\tribute_cards\EcardItemEntityTypeHtmlRouteProvider",
+ *       "html" = "Drupal\tribute_cards\Routing\EcardItemEntityTypeHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "ecard_item_type",
