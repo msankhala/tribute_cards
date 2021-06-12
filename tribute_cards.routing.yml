@@ -1,0 +1,7 @@
+tribute_cards.structure:
+  path: '/admin/structure/tribute-cards'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Tribute Cards'
+  requirements:
+    _permission: 'administer tribute cards'

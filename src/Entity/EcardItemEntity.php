@@ -50,12 +50,12 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *     "published" = "status",
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/ecard_item/{ecard_item}",
- *     "add-page" = "/admin/structure/ecard_item/add",
- *     "add-form" = "/admin/structure/ecard_item/add/{ecard_item_type}",
- *     "edit-form" = "/admin/structure/ecard_item/{ecard_item}/edit",
- *     "delete-form" = "/admin/structure/ecard_item/{ecard_item}/delete",
- *     "collection" = "/admin/structure/ecard_item",
+ *     "canonical" = "/admin/tribute-cards/ecard_item/{ecard_item}",
+ *     "add-page" = "/admin/tribute-cards/ecard_item/add",
+ *     "add-form" = "/admin/tribute-cards/ecard_item/add/{ecard_item_type}",
+ *     "edit-form" = "/admin/tribute-cards/ecard_item/{ecard_item}/edit",
+ *     "delete-form" = "/admin/tribute-cards/ecard_item/{ecard_item}/delete",
+ *     "collection" = "/admin/tribute-cards/ecard_item",
  *   },
  *   bundle_entity_type = "ecard_item_type",
  *   field_ui_base_route = "entity.ecard_item_type.edit_form"

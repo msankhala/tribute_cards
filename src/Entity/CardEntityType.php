@@ -31,11 +31,11 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/card_entity_type/{card_entity_type}",
- *     "add-form" = "/admin/structure/card_entity_type/add",
- *     "edit-form" = "/admin/structure/card_entity_type/{card_entity_type}/edit",
- *     "delete-form" = "/admin/structure/card_entity_type/{card_entity_type}/delete",
- *     "collection" = "/admin/structure/card_entity_type"
+ *     "canonical" = "/admin/tribute-cards/card_entity_type/{card_entity_type}",
+ *     "add-form" = "/admin/tribute-cards/card_entity_type/add",
+ *     "edit-form" = "/admin/tribute-cards/card_entity_type/{card_entity_type}/edit",
+ *     "delete-form" = "/admin/tribute-cards/card_entity_type/{card_entity_type}/delete",
+ *     "collection" = "/admin/tribute-cards/card_entity_type"
  *   }
  * )
  */

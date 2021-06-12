@@ -1,23 +1,19 @@
 entity.card_entity.add_form:
   route_name: entity.card_entity.add_page
-  title: 'Add Card entity'
+  title: 'Add Tribute Card'
   appears_on:
     - entity.card_entity.collection
 entity.card_entity_type.add_form:
   route_name: entity.card_entity_type.add_form
-  title: 'Add Card entity type'
+  title: 'Add Tribute Card Type'
   appears_on:
     - entity.card_entity_type.collection
-entity.ecard_item_entity.add_form:
-  route_name: entity.ecard_item_entity.add_form
-  title: 'Add Ecard Item Entity'
-  appears_on:
-    - entity.ecard_item_entity.collection
 entity.ecard_item.add_form:
   route_name: entity.ecard_item.add_page
   title: 'Add Ecard Item'
   appears_on:
     - entity.ecard_item.collection
+    - entity.card_entity.collection
 # Hide Add Ecard Item type action link
 # entity.ecard_item_type.add_form:
 #   route_name: entity.ecard_item_type.add_form

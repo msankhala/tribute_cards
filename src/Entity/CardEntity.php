@@ -46,12 +46,12 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "langcode" = "langcode",
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/card_entity/{card_entity}",
- *     "add-page" = "/admin/structure/card_entity/add",
- *     "add-form" = "/admin/structure/card_entity/add/{card_entity_type}",
- *     "edit-form" = "/admin/structure/card_entity/{card_entity}/edit",
- *     "delete-form" = "/admin/structure/card_entity/{card_entity}/delete",
- *     "collection" = "/admin/structure/card_entity",
+ *     "canonical" = "/admin/tribute-cards/card_entity/{card_entity}",
+ *     "add-page" = "/admin/tribute-cards/card_entity/add",
+ *     "add-form" = "/admin/tribute-cards/card_entity/add/{card_entity_type}",
+ *     "edit-form" = "/admin/tribute-cards/card_entity/{card_entity}/edit",
+ *     "delete-form" = "/admin/tribute-cards/card_entity/{card_entity}/delete",
+ *     "collection" = "/admin/tribute-cards/card_entity",
  *   },
  *   bundle_entity_type = "card_entity_type",
  *   field_ui_base_route = "entity.card_entity_type.edit_form"

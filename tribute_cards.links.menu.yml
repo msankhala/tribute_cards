@@ -1,49 +1,55 @@
+# Tribute Card menu items definition
+trubute_cards.structure:
+  title: 'Tribute Cards'
+  description: 'Administer Tribute Cards, such as eCards, Paper Cards, eCard Items etc.'
+  route_name: tribute_cards.structure
+  parent: system.admin_structure
+
+# Contact type menu items definition
+# entity.redhen_contact_type.collection:
+#   title: 'Contact types'
+#   route_name: entity.redhen_contact_type.collection
+#   description: 'List Contact types'
+#   parent: redhen.structure
+#   weight: 99
+
+# practical_type_entity_collection_menu:
+#   title: 'PracticalEntity Types'
+#   route_name: entity.practical_type.collection
+#   description: 'List of Practical entity types (bundles)'
+#   parent: system.admin_structure
 
 # Card entity menu items definition
 entity.card_entity.collection:
-  title: 'Card list'
+  title: 'Tribute Card List'
   route_name: entity.card_entity.collection
-  description: 'List Card entity entities'
-  parent: system.admin_structure
+  description: 'List Tribute Card entities'
+  parent: trubute_cards.structure
   weight: 100
 
 
 # Card entity type menu items definition
 entity.card_entity_type.collection:
-  title: 'Card entity type'
+  title: 'Tribute Card Type'
   route_name: entity.card_entity_type.collection
-  description: 'List Card entity type (bundles)'
-  parent: system.admin_structure
+  description: 'List Tribute Card entity type (bundles)'
+  parent: trubute_cards.structure
   weight: 99
 
-# # Ecard Item Entity menu items definition
-# entity.ecard_item_entity.collection:
-#   title: 'Ecard Item list'
-#   route_name: entity.ecard_item_entity.collection
-#   description: 'List Ecard Item Entity entities'
-#   parent: system.admin_structure
-#   weight: 100
-
-
-# ecard_item_entity.admin.structure.settings:
-#   title: 'Ecard Item Entity settings'
-#   description: 'Configure Ecard Item Entity entities'
-#   route_name: ecard_item_entity.settings
-#   parent: system.admin_structure
 
 # Ecard Item menu items definition
 entity.ecard_item.collection:
-  title: 'Ecard Item list'
+  title: 'Ecard Item List'
   route_name: entity.ecard_item.collection
   description: 'List Ecard Item entities'
-  parent: system.admin_structure
+  parent: trubute_cards.structure
   weight: 100
 
 
 # Ecard Item type menu items definition
 entity.ecard_item_type.collection:
-  title: 'Ecard Item type'
+  title: 'Ecard Item Type'
   route_name: entity.ecard_item_type.collection
   description: 'List Ecard Item type (bundles)'
-  parent: system.admin_structure
+  parent: trubute_cards.structure
   weight: 99

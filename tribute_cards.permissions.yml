@@ -1,3 +1,7 @@
+administer tribute cards:
+  title: 'Administer Tribute Cards'
+  description: 'Perform administration tasks for Tribute tasks.'
+
 add card entity entities:
   title: 'Create new Card entity entities'
 
