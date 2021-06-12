@@ -2,17 +2,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.card_entity.ecard.field_ecard_item
     - field.field.card_entity.ecard.field_ecard_message
     - field.field.card_entity.ecard.field_ecard_subject
     - field.field.card_entity.ecard.field_recipient_email_addresses
     - tribute_cards.card_entity_type.ecard
+_core:
+  default_config_hash: R6H1SV9mUADgMGdWWoWiucmv4AcyOAViHPVrHNSQn4s
 id: card_entity.ecard.default
 targetEntityType: card_entity
 bundle: ecard
 mode: default
 content:
+  field_ecard_item:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_ecard_message:
-    weight: 5
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -20,7 +29,7 @@ content:
     type: string_textarea
     region: content
   field_ecard_subject:
-    weight: 4
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -28,7 +37,7 @@ content:
     type: string_textfield
     region: content
   field_recipient_email_addresses:
-    weight: 3
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -37,7 +46,7 @@ content:
     region: content
   honoree_first_name:
     type: string_textfield
-    weight: -4
+    weight: 1
     region: content
     settings:
       size: 60
@@ -45,7 +54,7 @@ content:
     third_party_settings: {  }
   honoree_last_name:
     type: string_textfield
-    weight: -4
+    weight: 2
     region: content
     settings:
       size: 60
@@ -53,7 +62,7 @@ content:
     third_party_settings: {  }
   tribute_type:
     type: options_select
-    weight: -4
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
