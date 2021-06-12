@@ -17,12 +17,13 @@ bundle: ecard
 mode: default
 content:
   field_ecard_item:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 3
     region: content
     label: above
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
   field_ecard_message:
     weight: 6
