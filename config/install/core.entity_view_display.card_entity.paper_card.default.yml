@@ -8,6 +8,8 @@ dependencies:
   module:
     - address
     - text
+_core:
+  default_config_hash: lZimBBekV-DoIgHf6aTFbXyKM3SROnjYgIviMIbjnGc
 id: card_entity.paper_card.default
 targetEntityType: card_entity
 bundle: paper_card
