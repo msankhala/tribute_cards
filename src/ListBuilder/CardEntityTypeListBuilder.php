@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tribute_cards;
+namespace Drupal\tribute_cards\ListBuilder;
 
 use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
 use Drupal\Core\Entity\EntityInterface;

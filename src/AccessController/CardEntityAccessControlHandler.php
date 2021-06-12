@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tribute_cards;
+namespace Drupal\tribute_cards\AccessController;
 
 use Drupal\Core\Entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;

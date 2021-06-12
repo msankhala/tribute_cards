@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tribute_cards;
+namespace Drupal\tribute_cards\Routing;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;

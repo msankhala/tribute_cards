@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tribute_cards;
+namespace Drupal\tribute_cards\AccessController;
 
 use Drupal\Core\Entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
@@ -28,7 +28,6 @@ class EcardItemEntityAccessControlHandler extends EntityAccessControlHandler {
           return AccessResult::allowedIfHasPermission($account, 'view unpublished ecard item entities');
         }
 
-
         return AccessResult::allowedIfHasPermission($account, 'view published ecard item entities');
 
       case 'update':
@@ -50,6 +49,5 @@ class EcardItemEntityAccessControlHandler extends EntityAccessControlHandler {
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     return AccessResult::allowedIfHasPermission($account, 'add ecard item entities');
   }
-
 
 }

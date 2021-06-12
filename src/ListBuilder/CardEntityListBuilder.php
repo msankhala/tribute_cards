@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tribute_cards;
+namespace Drupal\tribute_cards\ListBuilder;
 
 use Drupal\Core\Link;
 use Drupal\Core\Datetime\DateFormatter;

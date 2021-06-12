@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\tribute_cards;
+namespace Drupal\tribute_cards\Translation;
 
 use Drupal\content_translation\ContentTranslationHandler;
 
