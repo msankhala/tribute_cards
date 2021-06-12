@@ -35,7 +35,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
  *     "route_provider" = {
  *       "html" = "Drupal\tribute_cards\Routing\EcardItemEntityHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\tribute_cards\AccessController\EcardItemEntityAccessControlHandler",
+ *     "access" = "Drupal\tribute_cards\Access\EcardItemEntityAccessControlHandler",
  *   },
  *   base_table = "ecard_item",
  *   data_table = "ecard_item_field_data",

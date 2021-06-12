@@ -1,14 +1,10 @@
-administer tribute cards:
-  title: 'Administer Tribute Cards'
-  description: 'Perform administration tasks for Tribute tasks.'
-
-add card entity entities:
-  title: 'Create new Card entity entities'
-
 administer card entity entities:
   title: 'Administer Card entity entities'
   description: 'Allow to access the administration form to configure Card entity entities.'
   restrict access: true
+
+add card entity entities:
+  title: 'Create new Card entity entities'
 
 delete card entity entities:
   title: 'Delete Card entity entities'
@@ -25,35 +21,16 @@ view card entity entities:
 # view unpublished card entity entities:
 #   title: 'View unpublished Card entity entities'
 
-# permission_callbacks:
-#   - \Drupal\tribute_cards\CardEntityPermissions::generatePermissions
-# add ecard item entity entities:
-#   title: 'Create new Ecard Item Entity entities'
-
-# administer ecard item entity entities:
-#   title: 'Administer Ecard Item Entity entities'
-#   description: 'Allow to access the administration form to configure Ecard Item Entity entities.'
-#   restrict access: true
-
-# delete ecard item entity entities:
-#   title: 'Delete Ecard Item Entity entities'
-
-# edit ecard item entity entities:
-#   title: 'Edit Ecard Item Entity entities'
-
-# view published ecard item entity entities:
-#   title: 'View published Ecard Item Entity entities'
-
-# view unpublished ecard item entity entities:
-#   title: 'View unpublished Ecard Item Entity entities'
-
-add ecard item entities:
-  title: 'Create new Ecard Item entities'
+permission_callbacks:
+  - \Drupal\tribute_cards\Access\CardEntityPermissions::generatePermissions
 
 administer ecard item entities:
   title: 'Administer Ecard Item entities'
   description: 'Allow to access the administration form to configure Ecard Item entities.'
   restrict access: true
+
+add ecard item entities:
+  title: 'Create new Ecard Item entities'
 
 delete ecard item entities:
   title: 'Delete Ecard Item entities'

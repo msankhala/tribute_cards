@@ -31,7 +31,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "route_provider" = {
  *       "html" = "Drupal\tribute_cards\Routing\CardEntityHtmlRouteProvider",
  *     },
- *     "access" = "Drupal\tribute_cards\AccessController\CardEntityAccessControlHandler",
+ *     "access" = "Drupal\tribute_cards\Access\CardEntityAccessControlHandler",
  *   },
  *   base_table = "card_entity",
  *   data_table = "card_entity_field_data",
