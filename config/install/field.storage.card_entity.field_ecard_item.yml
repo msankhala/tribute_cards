@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - tribute_cards
+id: card_entity.field_ecard_item
+field_name: field_ecard_item
+entity_type: card_entity
+type: entity_reference
+settings:
+  target_type: ecard_item
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

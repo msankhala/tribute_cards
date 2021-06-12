@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - tribute_cards.ecard_item_type.ecard_item
+  module:
+    - image
+id: ecard_item.ecard_item.default
+targetEntityType: ecard_item
+bundle: ecard_item
+mode: default
+content:
+  image:
+    label: above
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

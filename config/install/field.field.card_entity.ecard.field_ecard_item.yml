@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.card_entity.field_ecard_item
+    - tribute_cards.card_entity_type.ecard
+id: card_entity.ecard.field_ecard_item
+field_name: field_ecard_item
+entity_type: card_entity
+bundle: ecard
+label: 'Select an eCard'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: ecard_item_reference
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference
