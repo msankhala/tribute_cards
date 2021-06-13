@@ -15,6 +15,13 @@ use Drupal\Core\Entity\EntityTypeInterface;
  * @ContentEntityType(
  *   id = "card_entity",
  *   label = @Translation("Card entity"),
+ *   label_collection = @Translation("Tribute Cards"),
+ *   label_singular = @Translation("Tribute Card"),
+ *   label_plural = @Translation("Tribute Cards"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count tribute card",
+ *     plural = "@count tribute cards",
+ *   ),
  *   bundle_label = @Translation("Card entity type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",

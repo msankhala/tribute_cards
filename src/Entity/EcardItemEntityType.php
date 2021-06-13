@@ -10,6 +10,12 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  * @ConfigEntityType(
  *   id = "ecard_item_type",
  *   label = @Translation("Ecard Item type"),
+ *   label_singular = @Translation("Ecard Item type"),
+ *   label_plural = @Translation("Ecard Item types"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count ecard item type",
+ *     plural = "@count ecard item types",
+ *   ),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\tribute_cards\ListBuilder\EcardItemEntityTypeListBuilder",

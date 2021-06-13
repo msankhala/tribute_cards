@@ -10,6 +10,12 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  * @ConfigEntityType(
  *   id = "card_entity_type",
  *   label = @Translation("Card entity type"),
+ *   label_singular = @Translation("Tribute Card entity type"),
+ *   label_plural = @Translation("Tribute Card entity types"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count tribute card type",
+ *     plural = "@count tribute card types",
+ *   ),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\tribute_cards\ListBuilder\CardEntityTypeListBuilder",

@@ -19,6 +19,13 @@ use Drupal\Core\Entity\EntityStorageInterface;
  * @ContentEntityType(
  *   id = "ecard_item",
  *   label = @Translation("Ecard Item"),
+ *   label_collection = @Translation("Ecard Items"),
+ *   label_singular = @Translation("Ecard Item"),
+ *   label_plural = @Translation("Ecard Items"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count ecard item",
+ *     plural = "@count ecard items",
+ *   ),
  *   bundle_label = @Translation("Ecard Item type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
