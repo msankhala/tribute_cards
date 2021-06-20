@@ -5,3 +5,11 @@ tribute_cards.structure:
     _title: 'Tribute Cards'
   requirements:
     _permission: 'administer card entity entities'
+
+entity.card_entity.settings:
+  path: '/admin/tribute-cards/card_entity/{card_entity}/settings'
+  defaults:
+    _form: '\Drupal\tribute_cards\Form\CardEntitySettingsForm'
+    _title: 'Tribute Card Settings'
+  requirements:
+    _permission: 'administer card entity entities'

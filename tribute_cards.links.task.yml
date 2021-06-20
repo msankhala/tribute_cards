@@ -16,6 +16,12 @@ entity.card_entity.delete_form:
   title: Delete
   weight: 10
 
+entity.card_entity.settings:
+  route_name:  entity.card_entity.settings
+  base_route:  entity.card_entity.canonical
+  title: Settings
+  weight: 10
+
 entity.card_entity.collection:
   route_name:  entity.card_entity.collection
   base_route:  system.admin_content
@@ -43,6 +49,7 @@ entity.ecard_item_entity.delete_form:
   base_route:  entity.ecard_item_entity.canonical
   title: Delete
   weight: 10
+
 # Ecard Item routing definition
 
 entity.ecard_item.canonical:

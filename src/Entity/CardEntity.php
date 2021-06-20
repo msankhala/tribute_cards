@@ -14,7 +14,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *
  * @ContentEntityType(
  *   id = "card_entity",
- *   label = @Translation("Card entity"),
+ *   label = @Translation("Tribute Card"),
  *   label_collection = @Translation("Tribute Cards"),
  *   label_singular = @Translation("Tribute Card"),
  *   label_plural = @Translation("Tribute Cards"),
@@ -34,6 +34,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *       "add" = "Drupal\tribute_cards\Form\CardEntityForm",
  *       "edit" = "Drupal\tribute_cards\Form\CardEntityForm",
  *       "delete" = "Drupal\tribute_cards\Form\CardEntityDeleteForm",
+ *       "settings" = "Drupal\tribute_cards\Form\CardEntitySettingsForm",
  *     },
  *     "route_provider" = {
  *       "html" = "Drupal\tribute_cards\Routing\CardEntityHtmlRouteProvider",
@@ -59,6 +60,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "edit-form" = "/admin/tribute-cards/card_entity/{card_entity}/edit",
  *     "delete-form" = "/admin/tribute-cards/card_entity/{card_entity}/delete",
  *     "collection" = "/admin/tribute-cards/card_entity",
+ *     "settings" = "/admin/tribute-cards/card_entity/{card_entity}/settings",
  *   },
  *   bundle_entity_type = "card_entity_type",
  *   field_ui_base_route = "entity.card_entity_type.edit_form"

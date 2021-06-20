@@ -9,7 +9,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *
  * @ConfigEntityType(
  *   id = "card_entity_type",
- *   label = @Translation("Card entity type"),
+ *   label = @Translation("Tribute Card entity type"),
  *   label_singular = @Translation("Tribute Card entity type"),
  *   label_plural = @Translation("Tribute Card entity types"),
  *   label_count = @PluralTranslation(
